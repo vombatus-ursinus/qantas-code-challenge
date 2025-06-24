@@ -6,9 +6,7 @@
   "author": "Sergey Baglyuk",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test"
   },
   "dependencies": {
     "classnames": "^2.5.1",

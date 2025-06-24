@@ -1,5 +1,5 @@
-import React from 'react';
 import { Airport } from '../types/airport';
+import React from 'react';
 
 interface AirportListCardProps {
     airport: Airport;
@@ -7,7 +7,7 @@ interface AirportListCardProps {
 }
 
 export const AirportListCard: React.FC<AirportListCardProps> = ({ airport, onClick }) => (
-    <div className="airport-card" onClick={() => onClick(airport.airportCode)}>
+    <div className="airport-list-card" onClick={() => onClick(airport.airportCode)}>
         <div className="airport-list-card-content">
             <h3 style={{ margin: 0 }}>{airport.airportName}</h3>
             <div style={{ marginTop: 4 }}>

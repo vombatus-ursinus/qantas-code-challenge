@@ -32,6 +32,62 @@ body {
 }
 
 .airport-card {
+  border: 2px solid var(--dark-grey);
+  border-radius: 4px;
+  margin-bottom: 4px;
+  /* margin: 1vh auto; */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+  background: var(--white);
+  transition: box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95vw;
+  height: 95vh;
+  flex-direction: column;
+  position: fixed;
+  overflow: hidden;
+}
+
+.airport-card-content {
+  margin-top: 24px;
+  flex: 1;
+  width: auto;
+  overflow-y: auto;
+  padding: 16px;
+  min-height: 0;
+}
+
+.airport-card-title {
+  text-align: center;
+  margin: 16px;
+}
+
+.airport-header {
+  background: var(--dark-grey);
+  color: var(--white);
+  cursor: default;
+  border: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin: -2px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.airport-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 2px 0;
+  max-width: 100%;
+}
+
+.airport-list-card {
   border: 1px solid var(--red);
   border-radius: 4px;
   padding: 16px;
@@ -45,13 +101,13 @@ body {
   justify-content: space-between;
 }
 
-.airport-card:hover {
+.airport-list-card:hover {
   background: var(--white);
   border: 2px solid var(--red);
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-.airport-card.cursor-default {
+.airport-list-card.cursor-default {
   cursor: default;
 }
 
@@ -79,13 +135,6 @@ body {
   text-align: center;
   width: 100%;
   margin: 0;
-}
-
-.airport-card-content {
-  flex: 1;
-  min-width: 0;
-  border: 2px solid var(--dark-grey);
-  padding: 8px;
 }
 
 .chevron {
@@ -119,7 +168,7 @@ body {
   justify-content: space-between;
   flex: 1;
   min-width: 0;
-  width: 90vw;
+  width: 80vw;
 }
 
 .foldable-title {
@@ -134,15 +183,6 @@ body {
   margin: 4px 0;
 }
 
-.airport-chips-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin: 2px 0;
-  max-width: 100%;
-}
-
 .app-btn {
   width: 100%;
   padding: 1.2em 0;
@@ -153,8 +193,6 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .app-btn--primary {

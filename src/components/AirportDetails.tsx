@@ -1,10 +1,9 @@
-import React from 'react';
 import { Airport } from '../types/airport';
-import { useCurrency } from '../hooks/currency';
-import cn from 'classnames';
-import { Foldable } from './Foldable';
 import { Button } from '../components/Button';
-
+import { Foldable } from './Foldable';
+import React from 'react';
+import cn from 'classnames';
+import { useCurrency } from '../hooks/currency';
 import { useNavigate } from 'react-router-dom';
 
 interface AirportDetailsProps {
@@ -16,24 +15,25 @@ export const AirportDetails: React.FC<AirportDetailsProps> = ({ airport }) => {
     const navigate = useNavigate();
 
     return (
-        <div>
-            <div className={cn("airport-card", "airport-list-header")}>
-                <h3 className="airport-list-title">{airport.airportName}</h3>
+        <div className="airport-card">
+            <div className={cn("airport-card", "airport-header")}>
+                <h3 className="airport-card-title">{airport.airportName}</h3>
             </div>
 
             <div className="airport-card-content">
                 <h2>{airport.city.cityName}, {airport.country.countryName}</h2>
-
                 <p><strong>Airport Code:</strong> {airport.airportCode}</p>
-
                 <div className="airport-chips-row">
                     {airport.eticketableAirport && <span>🎫 e-Ticketable</span>}
-                    {airport.internationalAirport && <span className="airport-type">🌐 International</span>}
-                    {airport.domesticAirport && <span className="airport-type">🏠 Domestic</span>}
-                    {airport.regionalAirport && <span className="airport-type">🧭 Regional</span>}
-                    {airport.onlineIndicator && <span className="airport-type">📶 Online</span>}
+                    {airport.internationalAirport && <span>🌐 International</span>}
+                    {airport.domesticAirport && <span>🏠 Domestic</span>}
+                    {airport.regionalAirport && <span>🧭 Regional</span>}
+                    <span>
+                        {airport.onlineIndicator 
+                        ? '📶 Online'
+                        : '❌ Offline'}
+                    </span>
                 </div>
-
                 <p><strong>Timezone:</strong> {airport.city.timeZoneName.replace('_', ' ')/*replacing underscore for better readability*/}</p>
                 <p><strong>Currency:</strong> {currency.data}</p>
 
@@ -61,11 +61,11 @@ export const AirportDetails: React.FC<AirportDetailsProps> = ({ airport }) => {
                             : [])
                     ]
                 }} />
-
-                <div style={{ marginTop: 24 }}>
-                    <Button variant="primary" onClick={() => navigate('/')}>Back to List</Button>
-                </div>
+            </div>
+            <div style={{ marginBottom: 16,  width: '90vw' }}>
+                <Button variant="primary" onClick={() => navigate('/')}>Back to List</Button>
             </div>
         </div>
+        
     );
 };
