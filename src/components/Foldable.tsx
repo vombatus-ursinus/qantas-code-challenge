@@ -13,7 +13,7 @@ export const Foldable: React.FC<{props: FoldableProps}> = ({ props }) => {
     };
 
     return (
-        <div className="airport-card foldable-card"
+        <div className="airport-list-card foldable-card"
             onClick={toggleFoldable}
             tabIndex={0}
             role="button"
